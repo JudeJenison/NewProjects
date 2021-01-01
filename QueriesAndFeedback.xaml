@@ -1,0 +1,215 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="QueriesAndFeedback" sap:VirtualizedContainerService.HintSize="2004,2236.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="54">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Activities.Contracts</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Mail.IMAP.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Queries_And_Feedback" sap:VirtualizedContainerService.HintSize="2014.4,2072" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="MailCollector" />
+      <Variable x:TypeArguments="x:String" Default="jude04224@gmail.com" Name="Manager" />
+      <Variable x:TypeArguments="x:String" Name="Pwd" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="1972.8,22.4" sap2010:WorkflowViewState.IdRef="GetPassword_3" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+WtP9swxZkOJ+qVfb5PYygAAAAACAAAAAAAQZgAAAAEAACAAAAD+NwYdQ6FCaITMROtj1NZajgkzi7Kr1tLbMz/xY3kFdgAAAAAOgAAAAAIAACAAAAAzuLtT2Y9CdlnY8/dJxWRIFxjykyziIjFi1atQnArVFxAAAAAi7GB3ul4QJsOnKZV2bs6eQAAAAGZD8gAVD6U3krV8k8QHR8Wpuzav820cgPdE5TcNXV+4bR6R2qXVEUDGdKyTnDXDQYrqdd0rL7UuJ47BG2xRZQw=" Result="[Pwd]" />
+    <ui:GetIMAPMailMessages TimeoutMS="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="jakteam95@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="1972.8,22.4" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" MailFolder="Inbox" MarkAsRead="True" Messages="[MailCollector]" OnlyUnreadMessages="False" Password="[Pwd]" Port="993" SecureConnection="Auto" Server="imap.gmail.com" Top="1" />
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1972.8,1700.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[MailCollector]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="snm:MailMessage">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="item" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1937.6,1566.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1896,60" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[item.Subject.ToString]" />
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1896,60" sap2010:WorkflowViewState.IdRef="MessageBox_12" Text="[item.From.Address.ToString]" />
+            <If Condition="[System.Text.RegularExpressions.Regex.Match(item.Subject.ToString,&quot;(Damaged|damage)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Subject.ToString,&quot;(broken|Broken)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Subject.ToString,&quot;(Refund|refund)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Subject.ToString,&quot;(Replacement|replacement)+&quot;).Success AndAlso System.Text.RegularExpressions.Regex.Match(item.Body.ToString,&quot;(Broken|broken)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Body.ToString,&quot;(Damaged|damaged)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Body.ToString,&quot;(Refund|refund)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Body.ToString,&quot;(Replacement|replacement)+&quot;).Success]" DisplayName="If for Damaged Product" sap:VirtualizedContainerService.HintSize="1896,1273.6" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="476.8,824.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hello Sir/Mam&quot;+Environment.NewLine + &quot;We are extremely sorry to hear that you have received a damaged product&quot;+Environment.NewLine+ &quot;We will sort out your problem soon,our employee will contact you soon to solve the problem&quot;+Environment.NewLine+ &quot;Thank you&quot;+Environment.NewLine+&quot;Team JAK&quot;]" DisplayName="Send SMTP Mail Message" Email="jakteam95@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="435.2,146.4" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Password="[Pwd]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Reply to&quot; +item.Subject.ToString]" To="[item.from.Address]">
+                    <ui:SendMail.Files>
+                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                    </ui:SendMail.Files>
+                  </ui:SendMail>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,231.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,152.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_15" Text="[&quot;Reply to complaint regarding the damaged product sent successfully&quot;]" />
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                  </ui:CommentOut>
+                  <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Dear Sir/Mam&quot; + item.SenderEmailAddress +&quot;has raised a complaint about the damaged order&quot; +Environment.NewLine+ &quot;Please solve the problem as soon as possible&quot;+Environment.NewLine+ &quot;Thank you&quot;]" DisplayName="Send SMTP Mail Message" Email="jakteam95@gmail.com" EnableSSL="True" From="[item.From.Address]" sap:VirtualizedContainerService.HintSize="435.2,146.4" sap2010:WorkflowViewState.IdRef="SendMail_8" IsBodyHtml="False" Password="[Pwd]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[item.Subject.ToString + &quot;From&quot; + item.SenderEmailAddress]" To="[Manager]">
+                    <ui:SendMail.Files>
+                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                    </ui:SendMail.Files>
+                  </ui:SendMail>
+                  <ui:MoveIMAPMailMessageToFolder DisplayName="Move IMAP Mail Message" Email="jakteam95@gmail.com" EnableSSL="True" FromFolder="Inbox" sap:VirtualizedContainerService.HintSize="435.2,88" sap2010:WorkflowViewState.IdRef="MoveIMAPMailMessageToFolder_1" MailFolder="Damaged Complaints" MailMessage="[item]" Password="[Pwd]" Port="993" SecureConnection="Auto" Server="imap.gmail.com" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <If Condition="[System.Text.RegularExpressions.Regex.Match(item.Subject.ToString,&quot;(color|Color)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Subject.ToString,&quot;(Colour|colour)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Subject.ToString,&quot;(Wrong|wrong)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Subject.ToString,&quot;(Misplaced|misplaced)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Subject.ToString,&quot;(Replacement|replacement)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Subject.ToString,&quot;(Cancel|cancel)+&quot;).Success AndAlso System.Text.RegularExpressions.Regex.Match(item.Body.ToString,&quot;(Wrong|wrong)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Body.ToString,&quot;(Misplaced|misplaced)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Body.ToString,&quot;(Replacement|replacement)+&quot;).Success Or  System.Text.RegularExpressions.Regex.Match(item.Body.ToString,&quot;(Cancel|cancel)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Body.ToString,&quot;(color|Color)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Body.ToString,&quot;(Colour|colour)+&quot;).Success]" sap:VirtualizedContainerService.HintSize="1375.2,1124" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="476.8,824.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hello Sir/Mam&quot;+Environment.NewLine+&quot;As you have requested for the return or cancel of your product&quot;+Environment.NewLine+&quot;Our executive will contact you regarding the issues&quot;+Environment.NewLine+&quot;Thank you&quot;]" DisplayName="Send SMTP Mail Message" Email="jakteam95@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="435.2,146.4" sap2010:WorkflowViewState.IdRef="SendMail_3" IsBodyHtml="False" Password="[Pwd]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Reply to&quot; +item.Subject.ToString]" To="[item.from.address]">
+                        <ui:SendMail.Files>
+                          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                        </ui:SendMail.Files>
+                      </ui:SendMail>
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,231.2" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,152.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_16" Text="[&quot;Reply for complaint about misplaced order sent successfully&quot;]" />
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                      </ui:CommentOut>
+                      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Dear Sir/Mam&quot; + item.SenderEmailAddress +&quot;has raised a complaint about replace/cancel  the order&quot; +Environment.NewLine+ &quot;Please solve the problem as soon as possible&quot;+Environment.NewLine+ &quot;Thank you&quot;]" DisplayName="Send SMTP Mail Message" Email="jakteam95@gmail.com" EnableSSL="True" From="[item.From.Address]" sap:VirtualizedContainerService.HintSize="435.2,146.4" sap2010:WorkflowViewState.IdRef="SendMail_6" IsBodyHtml="False" Password="[Pwd]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[item.Subject.ToString + &quot;From&quot; + item.SenderEmailAddress]" To="[Manager]">
+                        <ui:SendMail.Files>
+                          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                        </ui:SendMail.Files>
+                      </ui:SendMail>
+                      <ui:MoveIMAPMailMessageToFolder DisplayName="Move IMAP Mail Message" Email="jakteam95@gmail.com" EnableSSL="True" FromFolder="Inbox" sap:VirtualizedContainerService.HintSize="435.2,88" sap2010:WorkflowViewState.IdRef="MoveIMAPMailMessageToFolder_2" MailFolder="Mismatched Order Complaints" MailMessage="[item]" Password="[Pwd]" Port="993" SecureConnection="Auto" Server="imap.gmail.com" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <If Condition="[System.Text.RegularExpressions.Regex.Match(item.Subject.ToString,&quot;(Late|late)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Subject.ToString,&quot;(Delayed|delayed)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Subject.ToString,&quot;(Speed delivery|Speed delivery)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Subject.ToString,&quot;(ETA|ETA)+&quot;).Success AndAlso System.Text.RegularExpressions.Regex.Match(item.Body.ToString,&quot;(Late|late)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Body.ToString,&quot;(Delayed|delayed)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Body.ToString,&quot;(Speed delivery|Speed delivery)+&quot;).Success Or System.Text.RegularExpressions.Regex.Match(item.Body.ToString,&quot;(ETA|ETA)+&quot;).Success]" sap:VirtualizedContainerService.HintSize="854.4,974.4" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="476.8,824.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hello Sir/Mam&quot;+Environment.NewLine+&quot;Since you have reported about the delay in delivery of your order&quot;+Environment.NewLine+&quot;We will do necessary arrangements for delivering your order as soon as possible&quot;+Environment.NewLine+&quot;Thank you&quot;]" DisplayName="Send SMTP Mail Message" Email="jakteam95@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="435.2,146.4" sap2010:WorkflowViewState.IdRef="SendMail_4" IsBodyHtml="False" Password="[Pwd]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Reply to&quot; +item.Subject.ToString]" To="[item.from.address]">
+                            <ui:SendMail.Files>
+                              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                            </ui:SendMail.Files>
+                          </ui:SendMail>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,231.2" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,152.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_17" Text="[&quot;Reply to complaint about delayed product sent&quot;]" />
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                          </ui:CommentOut>
+                          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Dear Sir/Mam&quot; + item.SenderEmailAddress +&quot;has raised a complaint about delay arrival of the order&quot; +Environment.NewLine+ &quot;Please solve the problem as soon as possible&quot;+Environment.NewLine+ &quot;Thank you&quot;]" DisplayName="Send SMTP Mail Message" Email="jakteam95@gmail.com" EnableSSL="True" From="[item.From.Address]" sap:VirtualizedContainerService.HintSize="435.2,146.4" sap2010:WorkflowViewState.IdRef="SendMail_7" IsBodyHtml="False" Password="[Pwd]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[item.Subject.ToString + &quot;From&quot; + item.SenderEmailAddress]" To="[Manager]">
+                            <ui:SendMail.Files>
+                              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                            </ui:SendMail.Files>
+                          </ui:SendMail>
+                          <ui:MoveIMAPMailMessageToFolder DisplayName="Move IMAP Mail Message" Email="jakteam95@gmail.com" EnableSSL="True" FromFolder="Inbox" sap:VirtualizedContainerService.HintSize="435.2,88" sap2010:WorkflowViewState.IdRef="MoveIMAPMailMessageToFolder_3" MailFolder="Delay Orders Complaints" MailMessage="[item]" Password="[Pwd]" Port="993" SecureConnection="Auto" Server="imap.gmail.com" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_21" Text="[&quot;No Issues&quot;]" />
+                      </If.Else>
+                    </If>
+                  </If.Else>
+                </If>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1972.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="C:\Users\jenis\Desktop\Hackathon\Extraction.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+  </Sequence>
+</Activity>
